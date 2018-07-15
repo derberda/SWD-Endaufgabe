@@ -92,11 +92,9 @@ namespace swd_projekt
                         {
                             try
                             {
-                                if (Controls.Words[1] == "")
+                                if (Controls.Words[1] == "" || Controls.Words[1] != enemyInfos.Name)
                                 {
                                     Console.WriteLine("You've made a wrong decision.\nThis enemy does not exist!");
-
-                                    Controls.Words[1] = null;
                                 }
                                 Attack.Fight(CurrentRoom, Controls.Words[1], avatarInfos, enemyInfos);
                             }
@@ -113,7 +111,7 @@ namespace swd_projekt
                         break;
                     case "commands":
                     case "c":
-                        Console.WriteLine("commands(c), look(l), inventory(i), take(t) item, drop(d) item, quit(q)");
+                        Console.WriteLine("commands(c), look(l), inventory(i), take(t) item, drop(d) item, attack(a) enemy, quit(q)");
                         break;
                     case "quit":
                     case "q":
