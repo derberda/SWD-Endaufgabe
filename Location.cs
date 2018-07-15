@@ -94,9 +94,9 @@ namespace swd_projekt
             if (location.Items.Count > 0)
             {
                 Console.WriteLine("In the room you can see these items: ");
-                foreach (var item in location.Items)
+                foreach (var i in location.Items)
                 {
-                    Console.WriteLine(item.Title + " - " + item.Description);
+                    Console.WriteLine(i.Title + " - " + i.Description);
                 }
             }
             else

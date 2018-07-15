@@ -18,9 +18,9 @@ namespace swd_projekt
         {
             if (avatarInfos.Inventory.Count > 0)
             {
-                foreach (var item in avatarInfos.Inventory)
+                foreach (var i in avatarInfos.Inventory)
                 {
-                    Console.WriteLine("Inventar: " + item.Title);
+                    Console.WriteLine("Inventar: " + i.Title);
                 }
             }
             else
@@ -64,9 +64,9 @@ namespace swd_projekt
         {
             if (enemyInfos.Dead == true)
             {
-                foreach (var item in enemyInfos.Inventory)
+                foreach (var i in enemyInfos.Inventory)
                 {
-                    location.Items.Add(item);
+                    location.Items.Add(i);
                 }
                 Console.WriteLine("Look there!! Your enemy dropped some items!");
                 Console.WriteLine("_______________________________________________________________________________________________________________________________________________________________");

@@ -16,9 +16,9 @@ namespace swd_projekt
                     Console.ResetColor();
                     if (avatarInfos.Inventory.Count > 0)
                     {
-                        foreach (var item in avatarInfos.Inventory)
+                        foreach (var i in avatarInfos.Inventory)
                         {
-                            Console.WriteLine(item.Title);
+                            Console.WriteLine(i.Title);
                         }
                     }
                     Environment.Exit(0);
