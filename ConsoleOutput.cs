@@ -40,21 +40,21 @@ namespace swd_projekt
         {
             Console.WriteLine("There is nothing in your bag.");
         }
-         public static void NotExistingItem()
+        public static void NotExistingItem()
         {
             Console.WriteLine("This item does not exist!");
         }
-         public static void ChooseItem()
+        public static void ChooseItem()
         {
             Console.WriteLine("You have to choose an item!");
         }
         public static void FalseItemInput(string words)
         {
-            if(words == "t")
-            Console.WriteLine("I don't understand this input :/ Please write it like this: t/take + itemname.");
+            if (words == "t")
+                Console.WriteLine("I don't understand this input :/ Please write it like this: t/take + itemname.");
             else if (words == "d")
-            Console.WriteLine("I don't understand this input :/ Please write it like this: d/drop + itemname.");
-        }  
+                Console.WriteLine("I don't understand this input :/ Please write it like this: d/drop + itemname.");
+        }
         #endregion
     }
 }

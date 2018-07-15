@@ -17,12 +17,12 @@ namespace swd_projekt
         {
             Enemy enemyInfos = Enemy.EnemySetUp();
             Avatar avatarInfos = Avatar.AvatarSetUp();
-            
+
             ConsoleOutput.Introduction();
             ConsoleOutput.DescribeRoom(currentRoom);
 
             for (; ; )
-            {     
+            {
                 SplitInput();
                 switch (words[0])
                 {
@@ -156,6 +156,6 @@ namespace swd_projekt
                 Console.WriteLine("There is no way! Choose another one!");
             }
             return currentRoom;
-        }     
+        }
     }
 }

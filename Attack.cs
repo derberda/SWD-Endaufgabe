@@ -43,6 +43,5 @@ namespace swd_projekt
                 }
             }
         }
-       
     }
 }

@@ -33,7 +33,7 @@ namespace swd_projekt
 
             RoomInteraction.RoomCheck(avatarInfos, enemyInfos);
             Win.checkWin(location, avatarInfos);
-            
+
             return playerLocation;
         }
     }

@@ -43,7 +43,7 @@ namespace swd_projekt
         public static void DropItem(Location location, string words, Avatar avatarInfos)
         {
             Items foundItem = avatarInfos.inventory.Find(x => x.Title.Contains(words));
-            if(foundItem == null)
+            if (foundItem == null)
             {
                 ConsoleOutput.NotExistingItem();
             }

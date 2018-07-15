@@ -76,6 +76,6 @@ namespace swd_projekt
             backyard.West = coolingRoom;
 
             return parkingSpot;
-        }        
+        }
     }
 }

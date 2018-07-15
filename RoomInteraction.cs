@@ -30,6 +30,6 @@ namespace swd_projekt
                 Console.WriteLine("There are no items in this rooms.");
             }
         }
-        
+
     }
 }
