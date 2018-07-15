@@ -11,6 +11,7 @@ namespace swd_projekt
         {
             string _input = Console.ReadLine();
             Words = _input.Split(' ');
+
             return Words;
         }
         public static void GameControls()
@@ -128,6 +129,7 @@ namespace swd_projekt
         public static Location RoomDirection(string words, Avatar avatarInfos, Enemy enemyInfos)
         {
             Location direction = null;
+            
             if (words == "n" || words == "north")
             {
                 direction = CurrentRoom.North;

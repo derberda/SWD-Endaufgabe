@@ -29,7 +29,7 @@ namespace swd_projekt
         {
             PlayerLocation = location.RoomNumber;
             ConsoleOutput.DescribeRoom(location);
-            Enemy.EnemyRandomLocation(enemyInfos);
+            RandomNumber.EnemyRandomLocation(enemyInfos);
 
             Location.RoomCheck(avatarInfos, enemyInfos);
             WinCondition.CheckWin(location, avatarInfos);
@@ -57,25 +57,6 @@ namespace swd_projekt
             shopkeeper.Inventory.Add(money);
 
             return shopkeeper;
-        }
-        public static void EnemyRandomLocation(Enemy enemy)
-        {
-            if (enemy.Dead == false)
-            {
-                Random rnd = new Random();
-                double randomRoomNumber = rnd.NextDouble();
-                randomRoomNumber = ((randomRoomNumber * (3.0 - 2.0)) + 2.0);
-                if (randomRoomNumber > 1.49)
-                {
-                    Math.Ceiling(randomRoomNumber);
-                }
-                else
-                {
-                    Math.Floor(randomRoomNumber);
-                }
-                int NewrandomRoomNumber = Convert.ToInt32(randomRoomNumber);
-                Enemy.RandomLocation = NewrandomRoomNumber;
-            }
         }
     }
 }

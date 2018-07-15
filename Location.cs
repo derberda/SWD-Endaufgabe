@@ -77,9 +77,8 @@ namespace swd_projekt
 
             return parkingSpot;
         }
+        
         #region RoomInteractions
-
-
         public static void RoomCheck(Avatar avatarInfos, Enemy enemyInfos)
         {
             if (avatarInfos.PlayerLocation == Enemy.RandomLocation)

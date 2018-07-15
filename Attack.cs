@@ -38,7 +38,7 @@ namespace swd_projekt
                     Enemy.RandomLocation = -1;
                     Console.ResetColor();
                     Console.WriteLine("Yeah you killed him. He has a wife and children - you're a MONSTER :(!!");
-                    Items.dropLoot(location, enemyInfos);
+                    Items.DropLoot(location, enemyInfos);
                     break;
                 }
             }

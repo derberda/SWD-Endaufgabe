@@ -7,7 +7,7 @@ namespace swd_projekt
     {
         public string Title;
         public string Description;
-        public Items(string title, string description)
+        public Items (string title, string description)
         {
             Title = title;
             Description = description;
@@ -18,9 +18,9 @@ namespace swd_projekt
         {
             if (avatarInfos.Inventory.Count > 0)
             {
-                foreach (var i in avatarInfos.Inventory)
+                foreach (var item in avatarInfos.Inventory)
                 {
-                    Console.WriteLine("Inventar: " + i.Title);
+                    Console.WriteLine("Inventar: " + item.Title);
                 }
             }
             else
@@ -31,22 +31,15 @@ namespace swd_projekt
         public static void TakeItem(Location location, string words, Avatar avatarInfos)
         {
             Items foundItem = location.Items.Find(x => x.Title.Contains(words));
-            if (foundItem != null)
+            if (foundItem != null && location.Items.Count > 0)
             {
                 Console.WriteLine("Found: " + foundItem.Title);
-            }
-            else
-            {
-                ConsoleOutput.NotExistingItem();
-            }
-            if (location.Items.Count > 0)
-            {
-                location.Items.Remove(foundItem);
+                 location.Items.Remove(foundItem);
                 avatarInfos.Inventory.Add(foundItem);
             }
             else
             {
-                Console.WriteLine("There are no items in this room!");
+                ConsoleOutput.NotExistingItem();
             }
         }
         public static void DropItem(Location location, string words, Avatar avatarInfos)
@@ -67,7 +60,7 @@ namespace swd_projekt
                 ConsoleOutput.EmptyBag();
             }
         }
-        public static void dropLoot(Location location, Enemy enemyInfos)
+        public static void DropLoot(Location location, Enemy enemyInfos)
         {
             if (enemyInfos.Dead == true)
             {
