@@ -7,9 +7,9 @@ namespace swd_projekt
     {
         public static void MyInventory(Avatar avatarInfos)
         {
-            if (avatarInfos.inventory.Count > 0)
+            if (avatarInfos.Inventory.Count > 0)
             {
-                foreach (var i in avatarInfos.inventory)
+                foreach (var i in avatarInfos.Inventory)
                 {
                     Console.WriteLine("Inventar: " + i.Title);
                 }
@@ -21,7 +21,7 @@ namespace swd_projekt
         }
         public static void TakeItem(Location location, string words, Avatar avatarInfos)
         {
-            Items foundItem = location.items.Find(x => x.Title.Contains(words));
+            Items foundItem = location.Items.Find(x => x.Title.Contains(words));
             if (foundItem != null)
             {
                 Console.WriteLine("Found: " + foundItem.Title);
@@ -30,10 +30,10 @@ namespace swd_projekt
             {
                 ConsoleOutput.NotExistingItem();
             }
-            if (location.items.Count > 0)
+            if (location.Items.Count > 0)
             {
-                location.items.Remove(foundItem);
-                avatarInfos.inventory.Add(foundItem);
+                location.Items.Remove(foundItem);
+                avatarInfos.Inventory.Add(foundItem);
             }
             else
             {
@@ -42,15 +42,15 @@ namespace swd_projekt
         }
         public static void DropItem(Location location, string words, Avatar avatarInfos)
         {
-            Items foundItem = avatarInfos.inventory.Find(x => x.Title.Contains(words));
+            Items foundItem = avatarInfos.Inventory.Find(x => x.Title.Contains(words));
             if (foundItem == null)
             {
                 ConsoleOutput.NotExistingItem();
             }
-            if (avatarInfos.inventory.Count > 0)
+            if (avatarInfos.Inventory.Count > 0)
             {
-                avatarInfos.inventory.RemoveAll(x => x.Title == words);
-                location.items.Add(foundItem);
+                avatarInfos.Inventory.RemoveAll(x => x.Title == words);
+                location.Items.Add(foundItem);
                 MyInventory(avatarInfos);
             }
             else
@@ -62,9 +62,9 @@ namespace swd_projekt
         {
             if (enemyInfos.Dead == true)
             {
-                foreach (var item in enemyInfos.inventory)
+                foreach (var item in enemyInfos.Inventory)
                 {
-                    location.items.Add(item);
+                    location.Items.Add(item);
                 }
                 Console.WriteLine("Look there!! Your enemy dropped some items!");
                 Console.WriteLine("_______________________________________________________________________________________________________________________________________________________________");

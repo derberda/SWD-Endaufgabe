@@ -5,13 +5,13 @@ namespace swd_projekt
 {
     class Controls
     {
-        public static string[] words;
-        public static Location currentRoom = Location.MapSetUp();
+        public static string[] Words;
+        public static Location CurrentRoom = Location.MapSetUp();
         public static Array SplitInput()
         {
             string _input = Console.ReadLine();
-            words = _input.Split(' ');
-            return words;
+            Words = _input.Split(' ');
+            return Words;
         }
         public static void GameControls()
         {
@@ -19,63 +19,63 @@ namespace swd_projekt
             Avatar avatarInfos = Avatar.AvatarSetUp();
 
             ConsoleOutput.Introduction();
-            ConsoleOutput.DescribeRoom(currentRoom);
+            ConsoleOutput.DescribeRoom(CurrentRoom);
 
             for (; ; )
             {
                 SplitInput();
-                switch (words[0])
+                switch (Words[0])
                 {
                     case "north":
                     case "n":
-                        RoomDirection(words[0], avatarInfos, enemyInfos);
+                        RoomDirection(Words[0], avatarInfos, enemyInfos);
                         break;
                     case "east":
                     case "e":
-                        RoomDirection(words[0], avatarInfos, enemyInfos);
+                        RoomDirection(Words[0], avatarInfos, enemyInfos);
                         break;
                     case "south":
                     case "s":
-                        RoomDirection(words[0], avatarInfos, enemyInfos);
+                        RoomDirection(Words[0], avatarInfos, enemyInfos);
                         break;
                     case "west":
                     case "w":
-                        RoomDirection(words[0], avatarInfos, enemyInfos);
+                        RoomDirection(Words[0], avatarInfos, enemyInfos);
                         break;
                     case "take":
                     case "t":
                         try
                         {
-                            if (words[1] == "")
+                            if (Words[1] == "")
                             {
                                 ConsoleOutput.ChooseItem();
                             }
                             else
                             {
-                                ItemInteraction.TakeItem(currentRoom, words[1], avatarInfos);
+                                ItemInteraction.TakeItem(CurrentRoom, Words[1], avatarInfos);
                             }
                         }
                         catch
                         {
-                            ConsoleOutput.FalseItemInput(words[0]);
+                            ConsoleOutput.FalseItemInput(Words[0]);
                         }
                         break;
                     case "drop":
                     case "d":
                         try
                         {
-                            if (words[1] == "")
+                            if (Words[1] == "")
                             {
                                 ConsoleOutput.ChooseItem();
                             }
                             else
                             {
-                                ItemInteraction.DropItem(currentRoom, words[1], avatarInfos);
+                                ItemInteraction.DropItem(CurrentRoom, Words[1], avatarInfos);
                             }
                         }
                         catch
                         {
-                            ConsoleOutput.FalseItemInput(words[0]);
+                            ConsoleOutput.FalseItemInput(Words[0]);
                         }
                         break;
                     case "inventory":
@@ -84,21 +84,21 @@ namespace swd_projekt
                         break;
                     case "look":
                     case "l":
-                        RoomInteraction.LookThroughRoom(currentRoom);
+                        RoomInteraction.LookThroughRoom(CurrentRoom);
                         break;
                     case "attack":
                     case "a":
-                        if (avatarInfos.playerLocation == Enemy.randomLocation)
+                        if (avatarInfos.PlayerLocation == Enemy.RandomLocation)
                         {
                             try
                             {
-                                if (Controls.words[1] == "")
+                                if (Controls.Words[1] == "")
                                 {
                                     Console.WriteLine("You've made a wrong decision.\nThis enemy does not exist!");
 
-                                    Controls.words[1] = null;
+                                    Controls.Words[1] = null;
                                 }
-                                Attack.Fight(currentRoom, Controls.words[1], avatarInfos, enemyInfos);
+                                Attack.Fight(CurrentRoom, Controls.Words[1], avatarInfos, enemyInfos);
                             }
                             catch
                             {
@@ -132,30 +132,30 @@ namespace swd_projekt
             Location direction = null;
             if (words == "n" || words == "north")
             {
-                direction = currentRoom.North;
+                direction = CurrentRoom.North;
             }
             else if (words == "e" || words == "east")
             {
-                direction = currentRoom.East;
+                direction = CurrentRoom.East;
             }
             else if (words == "s" || words == "south")
             {
-                direction = currentRoom.South;
+                direction = CurrentRoom.South;
             }
             else if (words == "w" || words == "west")
             {
-                direction = currentRoom.West;
+                direction = CurrentRoom.West;
             }
             if (direction != null)
             {
-                currentRoom = direction;
-                avatarInfos.AvatarCurrentLocation(currentRoom, avatarInfos, enemyInfos);
+                CurrentRoom = direction;
+                avatarInfos.AvatarCurrentLocation(CurrentRoom, avatarInfos, enemyInfos);
             }
             else
             {
                 Console.WriteLine("There is no way! Choose another one!");
             }
-            return currentRoom;
+            return CurrentRoom;
         }
     }
 }

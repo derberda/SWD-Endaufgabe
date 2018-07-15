@@ -7,7 +7,7 @@ namespace swd_projekt
     {
         public static void RoomCheck(Avatar avatarInfos, Enemy enemyInfos)
         {
-            if (avatarInfos.playerLocation == Enemy.randomLocation)
+            if (avatarInfos.PlayerLocation == Enemy.RandomLocation)
             {
                 ConsoleOutput.RoomCheckText(enemyInfos);
             }
@@ -17,10 +17,10 @@ namespace swd_projekt
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("You're in the " + location.Title);
             Console.ResetColor();
-            if (location.items.Count > 0)
+            if (location.Items.Count > 0)
             {
                 Console.WriteLine("In the room you can see these items: ");
-                foreach (var item in location.items)
+                foreach (var item in location.Items)
                 {
                     Console.WriteLine(item.Title + " - " + item.Description);
                 }

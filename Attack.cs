@@ -35,7 +35,7 @@ namespace swd_projekt
                 if (enemyInfos.Health < 0)
                 {
                     enemyInfos.Dead = true;
-                    Enemy.randomLocation = -1;
+                    Enemy.RandomLocation = -1;
                     Console.ResetColor();
                     Console.WriteLine("Yeah you killed him. He has a wife and children - you're a MONSTER :(!!");
                     ItemInteraction.dropLoot(location, enemyInfos);

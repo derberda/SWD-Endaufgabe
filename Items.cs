@@ -7,10 +7,10 @@ namespace swd_projekt
     {
         public string Title;
         public string Description;
-        public Items(string _title, string _description)
+        public Items(string title, string description)
         {
-            Title = _title;
-            Description = _description;
+            Title = title;
+            Description = description;
         }
     }
 }

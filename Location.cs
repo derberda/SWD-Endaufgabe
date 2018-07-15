@@ -8,17 +8,17 @@ namespace swd_projekt
         public string Title;
         public string Description;
         public int RoomNumber;
-        public List<Items> items = new List<Items>();
+        public List<Items> Items = new List<Items>();
         public Location North;
         public Location East;
         public Location South;
         public Location West;
 
-        public Location(int _roomNumber, string _title, string _description)
+        public Location(int roomNumber, string title, string description)
         {
-            RoomNumber = _roomNumber;
-            Title = _title;
-            Description = _description;
+            RoomNumber = roomNumber;
+            Title = title;
+            Description = description;
 
         }
         public static Location MapSetUp()
@@ -60,18 +60,18 @@ namespace swd_projekt
             supermarket.North = parkingSpot;
             supermarket.East = office;
             supermarket.South = coolingRoom;
-            supermarket.items.Add(chocolate);
-            supermarket.items.Add(water);
-            supermarket.items.Add(bread);
+            supermarket.Items.Add(chocolate);
+            supermarket.Items.Add(water);
+            supermarket.Items.Add(bread);
 
             office.West = supermarket;
 
             coolingRoom.North = supermarket;
             coolingRoom.East = backyard;
-            coolingRoom.items.Add(meat);
-            coolingRoom.items.Add(milk);
-            coolingRoom.items.Add(plier);
-            coolingRoom.items.Add(screwdriver);
+            coolingRoom.Items.Add(meat);
+            coolingRoom.Items.Add(milk);
+            coolingRoom.Items.Add(plier);
+            coolingRoom.Items.Add(screwdriver);
 
             backyard.West = coolingRoom;
 

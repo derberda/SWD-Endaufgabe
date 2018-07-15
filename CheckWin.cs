@@ -3,20 +3,20 @@ using System.Collections.Generic;
 
 namespace swd_projekt
 {
-    class Win
+    class WinCondition
     {
-        public static void checkWin(Location location, Avatar avatarInfos)
+        public static void CheckWin(Location location, Avatar avatarInfos)
         {
             if (location.Title == "The backyard")
             {
-                if (avatarInfos.inventory.Exists(x => x.Title == "plier"))
+                if (avatarInfos.Inventory.Exists(x => x.Title == "plier"))
                 {
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("You cut a hole in the fence with your plier and you can escape now.\nYou've looted following things:\n");
                     Console.ResetColor();
-                    if (avatarInfos.inventory.Count > 0)
+                    if (avatarInfos.Inventory.Count > 0)
                     {
-                        foreach (var item in avatarInfos.inventory)
+                        foreach (var item in avatarInfos.Inventory)
                         {
                             Console.WriteLine(item.Title);
                         }

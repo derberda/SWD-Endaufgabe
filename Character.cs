@@ -8,15 +8,15 @@ namespace swd_projekt
         public string Name;
         public int Health;
         public bool Dead;
-        public List<Items> inventory = new List<Items>();
+        public List<Items> Inventory = new List<Items>();
     }
 
     class Avatar : Character
     {
-        public int playerLocation;
-        public Avatar(int _health)
+        public int PlayerLocation;
+        public Avatar(int health)
         {
-            Health = _health;
+            Health = health;
         }
         public static Avatar AvatarSetUp()
         {
@@ -27,24 +27,24 @@ namespace swd_projekt
         }
         public int AvatarCurrentLocation(Location location, Avatar avatarInfos, Enemy enemyInfos)
         {
-            playerLocation = location.RoomNumber;
+            PlayerLocation = location.RoomNumber;
             ConsoleOutput.DescribeRoom(location);
             Enemy.EnemyRandomLocation(enemyInfos);
 
             RoomInteraction.RoomCheck(avatarInfos, enemyInfos);
             WinCondition.CheckWin(location, avatarInfos);
 
-            return playerLocation;
+            return PlayerLocation;
         }
     }
     class Enemy : Character
     {
-        public static int randomLocation = 1;
-        public Enemy(string _name, int _health, bool _dead)
+        public static int RandomLocation = 1;
+        public Enemy(string name, int health, bool dead)
         {
-            Name = _name;
-            Health = _health;
-            Dead = _dead;
+            Name = name;
+            Health = health;
+            Dead = dead;
         }
         public static Enemy EnemySetUp()
         {
@@ -54,7 +54,7 @@ namespace swd_projekt
                 false
             );
             Items money = new Items("money", "It's raining money yeah!!");
-            shopkeeper.inventory.Add(money);
+            shopkeeper.Inventory.Add(money);
 
             return shopkeeper;
         }
@@ -74,7 +74,7 @@ namespace swd_projekt
                     Math.Floor(randomRoomNumber);
                 }
                 int NewrandomRoomNumber = Convert.ToInt32(randomRoomNumber);
-                Enemy.randomLocation = NewrandomRoomNumber;
+                Enemy.RandomLocation = NewrandomRoomNumber;
             }
         }
     }
