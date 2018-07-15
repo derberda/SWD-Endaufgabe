@@ -43,6 +43,7 @@ namespace swd_projekt
             Console.WriteLine("_______________________________________________________________________________________________________________________________________________________________");
         }
         #endregion
+
         #region ItemText
         public static void EmptyBag()
         {

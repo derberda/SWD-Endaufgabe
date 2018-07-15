@@ -52,7 +52,7 @@ namespace swd_projekt
                             }
                             else
                             {
-                                ItemInteraction.TakeItem(CurrentRoom, Words[1], avatarInfos);
+                                Items.TakeItem(CurrentRoom, Words[1], avatarInfos);
                             }
                         }
                         catch
@@ -70,7 +70,7 @@ namespace swd_projekt
                             }
                             else
                             {
-                                ItemInteraction.DropItem(CurrentRoom, Words[1], avatarInfos);
+                                Items.DropItem(CurrentRoom, Words[1], avatarInfos);
                             }
                         }
                         catch
@@ -80,11 +80,11 @@ namespace swd_projekt
                         break;
                     case "inventory":
                     case "i":
-                        ItemInteraction.MyInventory(avatarInfos);
+                        Items.MyInventory(avatarInfos);
                         break;
                     case "look":
                     case "l":
-                        RoomInteraction.LookThroughRoom(CurrentRoom);
+                        Location.LookThroughRoom(CurrentRoom);
                         break;
                     case "attack":
                     case "a":

@@ -31,7 +31,7 @@ namespace swd_projekt
             ConsoleOutput.DescribeRoom(location);
             Enemy.EnemyRandomLocation(enemyInfos);
 
-            RoomInteraction.RoomCheck(avatarInfos, enemyInfos);
+            Location.RoomCheck(avatarInfos, enemyInfos);
             WinCondition.CheckWin(location, avatarInfos);
 
             return PlayerLocation;
