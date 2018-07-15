@@ -23,6 +23,14 @@ namespace swd_projekt
             Console.WriteLine();
             Console.WriteLine(location.Description);
             Console.ResetColor();
+            if (location.items.Count > 0)
+            {
+                Console.WriteLine("In the room you can see these items: ");
+                foreach (var item in location.items)
+                {
+                    Console.WriteLine(item.Title + " - " + item.Description);
+                }
+            }
             Console.WriteLine("_______________________________________________________________________________________________________________________________________________________________");
         }
 

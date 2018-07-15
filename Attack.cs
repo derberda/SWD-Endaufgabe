@@ -18,7 +18,7 @@ namespace swd_projekt
                     Console.WriteLine("health Enemy: " + enemyInfos.Health);
                     Console.WriteLine("health Avatar: " + avatarInfos.Health);
                 }
-                else if (words != enemyInfos.Name)
+                else
                 {
                     avatarInfos.Health = avatarInfos.Health - RandomNumber.AttackEnemyValue();
                     enemyInfos.Health = enemyInfos.Health - RandomNumber.AttackPlayerValue();
