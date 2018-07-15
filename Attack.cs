@@ -15,16 +15,15 @@ namespace swd_projekt
                 {
                     enemyInfos.Health = enemyInfos.Health - RandomNumber.AttackPlayerValue();
                     avatarInfos.Health = avatarInfos.Health - RandomNumber.AttackEnemyValue();
-                    Console.WriteLine("Kampf health Enemy: " + enemyInfos.Health);
-                    Console.WriteLine("Kampf health Avatar: " + avatarInfos.Health);
+                    Console.WriteLine("health Enemy: " + enemyInfos.Health);
+                    Console.WriteLine("health Avatar: " + avatarInfos.Health);
                 }
                 else if (words != enemyInfos.Name)
                 {
-                    Console.WriteLine("This enemy does not exist! ");
                     avatarInfos.Health = avatarInfos.Health - RandomNumber.AttackEnemyValue();
                     enemyInfos.Health = enemyInfos.Health - RandomNumber.AttackPlayerValue();
-                    Console.WriteLine("Kampf health Avatar: " + avatarInfos.Health);
-                    Console.WriteLine("Kampf health Enemy: " + enemyInfos.Health);
+                    Console.WriteLine("health Avatar: " + avatarInfos.Health);
+                    Console.WriteLine("health Enemy: " + enemyInfos.Health);
                 }
                 if (avatarInfos.Health < 0)
                 {
@@ -39,24 +38,11 @@ namespace swd_projekt
                     Enemy.randomLocation = -1;
                     Console.ResetColor();
                     Console.WriteLine("Yeah you killed him. He has a wife and children - you're a MONSTER :(!!");
-                    dropLoot(location, enemyInfos);
+                    ItemInteraction.dropLoot(location, enemyInfos);
                     break;
                 }
             }
         }
-        public static void dropLoot(Location location, Enemy enemyInfos)
-        {
-            if (enemyInfos.Dead == true)
-            {
-                foreach (var item in enemyInfos.inventory)
-                {
-                    location.items.Add(item);
-                }
-                Console.WriteLine("Look there!! Your enemy dropped some items!");
-                Console.WriteLine("_______________________________________________________________________________________________________________________________________________________________");
-
-            }
-
-        }
+       
     }
 }

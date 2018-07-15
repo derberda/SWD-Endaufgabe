@@ -7,7 +7,6 @@ namespace swd_projekt
     {
         public string Title;
         public string Description;
-
         public Items(string _title, string _description)
         {
             Title = _title;

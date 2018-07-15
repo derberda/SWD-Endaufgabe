@@ -14,7 +14,6 @@ namespace swd_projekt
         public Location South;
         public Location West;
 
-
         public Location(int _roomNumber, string _title, string _description)
         {
             RoomNumber = _roomNumber;
@@ -77,48 +76,6 @@ namespace swd_projekt
             backyard.West = coolingRoom;
 
             return parkingSpot;
-        }
-        public static void RoomCheck(Avatar avatarInfos, Enemy enemyInfos)
-        {
-            if (avatarInfos.playerLocation == Enemy.randomLocation)
-            {
-                Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                Console.WriteLine("The " + enemyInfos.Name + "is in the house - You have fight!");
-                Console.WriteLine("What do you want to do? - You can attack the enemy or flee!\nTo flee walk in a direction. To attack write it like this: a/attack + enemyname.");
-                Console.ResetColor();
-                Console.WriteLine("_______________________________________________________________________________________________________________________________________________________________");
-
-            }
-        }
-        public static void LookThroughRoom(Location location)
-        {
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("You're in the " + location.Title);
-            Console.ResetColor();
-            if (location.items.Count > 0)
-            {
-                Console.WriteLine("In the room you can see these items: ");
-                foreach (var item in location.items)
-                {
-                    Console.WriteLine(item.Title + " - " + item.Description);
-                }
-            }
-            else
-            {
-                Console.WriteLine("There are no items in this rooms.");
-            }
-        }
-        public static void DescribeRoom(Location location)
-        {
-            Console.WriteLine("_______________________________________________________________________________________________________________________________________________________________");
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine(location.Title);
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
-            Console.WriteLine();
-            Console.WriteLine(location.Description);
-            Console.ResetColor();
-            Console.WriteLine("_______________________________________________________________________________________________________________________________________________________________");
-        }
+        }        
     }
 }

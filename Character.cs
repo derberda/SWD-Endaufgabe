@@ -14,7 +14,6 @@ namespace swd_projekt
     class Avatar : Character
     {
         public int playerLocation;
-
         public Avatar(int _health)
         {
             Health = _health;
@@ -29,27 +28,24 @@ namespace swd_projekt
         public int AvatarCurrentLocation(Location location, Avatar avatarInfos, Enemy enemyInfos)
         {
             playerLocation = location.RoomNumber;
-            Location.DescribeRoom(location);
+            ConsoleOutput.DescribeRoom(location);
             Enemy.EnemyRandomLocation(enemyInfos);
 
-            Location.RoomCheck(avatarInfos, enemyInfos);
+            RoomInteraction.RoomCheck(avatarInfos, enemyInfos);
             Win.checkWin(location, avatarInfos);
             
             return playerLocation;
         }
-
     }
     class Enemy : Character
     {
         public static int randomLocation = 1;
-
         public Enemy(string _name, int _health, bool _dead)
         {
             Name = _name;
             Health = _health;
             Dead = _dead;
         }
-
         public static Enemy EnemySetUp()
         {
             Enemy shopkeeper = new Enemy(
@@ -82,6 +78,4 @@ namespace swd_projekt
             }
         }
     }
-
-
 }

@@ -19,3 +19,14 @@ C:\Users\Berdan Der\Semester_4\Softwaredesign\SWD-Endaufgabe\swd_projekt\obj\Deb
 C:\Users\Berdan Der\Semester_4\Softwaredesign\SWD-Endaufgabe\swd_projekt\obj\Debug\netcoreapp2.0\swd_projekt.dll
 C:\Users\Berdan Der\Semester_4\Softwaredesign\SWD-Endaufgabe\swd_projekt\obj\Debug\netcoreapp2.0\swd_projekt.pdb
 C:\Users\Berdan Der\Semester_4\Softwaredesign\SWD-Endaufgabe\swd_projekt\obj\Debug\netcoreapp2.0\swd_projekt.csprojResolveAssemblyReference.cache
+C:\Users\Berdan Der\Semester_4\Softwaredesign\SWD-Endaufgabe\swd_projekt\SWD-Endaufgabe\bin\Debug\netcoreapp2.0\swd_projekt.deps.json
+C:\Users\Berdan Der\Semester_4\Softwaredesign\SWD-Endaufgabe\swd_projekt\SWD-Endaufgabe\bin\Debug\netcoreapp2.0\swd_projekt.runtimeconfig.json
+C:\Users\Berdan Der\Semester_4\Softwaredesign\SWD-Endaufgabe\swd_projekt\SWD-Endaufgabe\bin\Debug\netcoreapp2.0\swd_projekt.runtimeconfig.dev.json
+C:\Users\Berdan Der\Semester_4\Softwaredesign\SWD-Endaufgabe\swd_projekt\SWD-Endaufgabe\bin\Debug\netcoreapp2.0\swd_projekt.dll
+C:\Users\Berdan Der\Semester_4\Softwaredesign\SWD-Endaufgabe\swd_projekt\SWD-Endaufgabe\bin\Debug\netcoreapp2.0\swd_projekt.pdb
+C:\Users\Berdan Der\Semester_4\Softwaredesign\SWD-Endaufgabe\swd_projekt\SWD-Endaufgabe\obj\Debug\netcoreapp2.0\swd_projekt.csprojResolveAssemblyReference.cache
+C:\Users\Berdan Der\Semester_4\Softwaredesign\SWD-Endaufgabe\swd_projekt\SWD-Endaufgabe\obj\Debug\netcoreapp2.0\swd_projekt.csproj.CoreCompileInputs.cache
+C:\Users\Berdan Der\Semester_4\Softwaredesign\SWD-Endaufgabe\swd_projekt\SWD-Endaufgabe\obj\Debug\netcoreapp2.0\swd_projekt.AssemblyInfoInputs.cache
+C:\Users\Berdan Der\Semester_4\Softwaredesign\SWD-Endaufgabe\swd_projekt\SWD-Endaufgabe\obj\Debug\netcoreapp2.0\swd_projekt.AssemblyInfo.cs
+C:\Users\Berdan Der\Semester_4\Softwaredesign\SWD-Endaufgabe\swd_projekt\SWD-Endaufgabe\obj\Debug\netcoreapp2.0\swd_projekt.dll
+C:\Users\Berdan Der\Semester_4\Softwaredesign\SWD-Endaufgabe\swd_projekt\SWD-Endaufgabe\obj\Debug\netcoreapp2.0\swd_projekt.pdb

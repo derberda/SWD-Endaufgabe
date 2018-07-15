@@ -11,7 +11,9 @@ namespace swd_projekt
             {
                 if (avatarInfos.inventory.Exists(x => x.Title == "plier"))
                 {
-                    Console.WriteLine("You cut a hole in the fence with your tongs and you can escape now.\nYou've looted following things:\n");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("You cut a hole in the fence with your plier and you can escape now.\nYou've looted following things:\n");
+                    Console.ResetColor();
                     if (avatarInfos.inventory.Count > 0)
                     {
                         foreach (var item in avatarInfos.inventory)
@@ -27,6 +29,5 @@ namespace swd_projekt
                 }
             }
         }
-
     }
 }

@@ -670,11 +670,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Berdan Der\\Semester_4\\Softwaredesign\\SWD-Endaufgabe\\swd_projekt\\swd_projekt.csproj",
+      "projectUniqueName": "C:\\Users\\Berdan Der\\Semester_4\\Softwaredesign\\SWD-Endaufgabe\\swd_projekt\\SWD-Endaufgabe\\swd_projekt.csproj",
       "projectName": "swd_projekt",
-      "projectPath": "C:\\Users\\Berdan Der\\Semester_4\\Softwaredesign\\SWD-Endaufgabe\\swd_projekt\\swd_projekt.csproj",
+      "projectPath": "C:\\Users\\Berdan Der\\Semester_4\\Softwaredesign\\SWD-Endaufgabe\\swd_projekt\\SWD-Endaufgabe\\swd_projekt.csproj",
       "packagesPath": "C:\\Users\\Berdan Der\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Berdan Der\\Semester_4\\Softwaredesign\\SWD-Endaufgabe\\swd_projekt\\obj\\",
+      "outputPath": "C:\\Users\\Berdan Der\\Semester_4\\Softwaredesign\\SWD-Endaufgabe\\swd_projekt\\SWD-Endaufgabe\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

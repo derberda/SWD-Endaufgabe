@@ -6,9 +6,7 @@ namespace swd_projekt
     class Controls
     {
         public static string[] words;
-
         public static Location currentRoom = Location.MapSetUp();
-
         public static Array SplitInput()
         {
             string _input = Console.ReadLine();
@@ -20,17 +18,12 @@ namespace swd_projekt
             Enemy enemyInfos = Enemy.EnemySetUp();
             Avatar avatarInfos = Avatar.AvatarSetUp();
             
-            Console.WriteLine();
-            Console.BackgroundColor = ConsoleColor.DarkRed;
-            Console.WriteLine("Welcome to Nashville. You run away from home and homeless now. But you have to go on and you didn't eat anything in th last times. Maybe you can borrow something from the supermarket");
-            Console.ResetColor(); 
-            Location.DescribeRoom(currentRoom);
+            ConsoleOutput.Introduction();
+            ConsoleOutput.DescribeRoom(currentRoom);
 
             for (; ; )
-            {
-                 
+            {     
                 SplitInput();
-
                 switch (words[0])
                 {
                     case "north":
@@ -55,16 +48,16 @@ namespace swd_projekt
                         {
                             if (words[1] == "")
                             {
-                                Console.WriteLine("You have to choose an item!");
+                                ConsoleOutput.ChooseItem();
                             }
                             else
                             {
-                                TakeItem(words[1], currentRoom, avatarInfos);
+                                ItemInteraction.TakeItem(currentRoom, words[1], avatarInfos);
                             }
                         }
                         catch
                         {
-                            Console.WriteLine("I don't understand this input :/ Please write it like this: t/take + itemname.");
+                            ConsoleOutput.FalseItemInput(words[0]);
                         }
                         break;
                     case "drop":
@@ -73,25 +66,25 @@ namespace swd_projekt
                         {
                             if (words[1] == "")
                             {
-                                Console.WriteLine("You have to choose an item!");
+                                ConsoleOutput.ChooseItem();
                             }
                             else
                             {
-                                DropItem(words[1], currentRoom, avatarInfos);
+                                ItemInteraction.DropItem(currentRoom, words[1], avatarInfos);
                             }
                         }
                         catch
                         {
-                            Console.WriteLine("I don't understand this input :/ Please write it like this: t/take + itemname.");
+                            ConsoleOutput.FalseItemInput(words[0]);
                         }
                         break;
                     case "inventory":
                     case "i":
-                        MyInventory(avatarInfos);
+                        ItemInteraction.MyInventory(avatarInfos);
                         break;
                     case "look":
                     case "l":
-                        Location.LookThroughRoom(currentRoom);
+                        RoomInteraction.LookThroughRoom(currentRoom);
                         break;
                     case "attack":
                     case "a":
@@ -101,7 +94,8 @@ namespace swd_projekt
                             {
                                 if (Controls.words[1] == "")
                                 {
-                                    Console.WriteLine("You've made a wrong decision");
+                                    Console.WriteLine("You've made a wrong decision.\nThis enemy does not exist!");
+
                                     Controls.words[1] = null;
                                 }
                                 Attack.Fight(currentRoom, Controls.words[1], avatarInfos, enemyInfos);
@@ -162,58 +156,6 @@ namespace swd_projekt
                 Console.WriteLine("There is no way! Choose another one!");
             }
             return currentRoom;
-        }
-
-        public static void TakeItem(string words, Location location, Avatar avatarInfos)
-        {
-            Items foundItem = location.items.Find(x => x.Title.Contains(words));
-            if (foundItem != null)
-            {
-                Console.WriteLine("Found: " + foundItem.Title);
-            }
-            else
-            {
-                Console.WriteLine("This item does not exist!");
-            }
-            if (location.items.Count > 0)
-            {
-                location.items.Remove(foundItem);
-                avatarInfos.inventory.Add(foundItem);
-            }
-            else
-            {
-                Console.WriteLine("There are no items in this room!");
-            }
-        }
-        public static void MyInventory(Avatar avatarInfos)
-        {
-            if (avatarInfos.inventory.Count > 0)
-            {
-                foreach (var i in avatarInfos.inventory)
-                {
-                    Console.WriteLine("Inventar: " + i.Title);
-                }
-            }
-            else
-            {
-                Console.WriteLine("Your bag is empty!");
-            }
-        }
-
-        public static void DropItem(string words, Location location, Avatar avatarInfos)
-        {
-            if (avatarInfos.inventory.Count > 0)
-            {
-                Items foundItem = avatarInfos.inventory.Find(x => x.Title.Contains(words));
-                location.items.Find(x => x.Title.Contains(words));
-                avatarInfos.inventory.RemoveAll(x => x.Title == words);
-                location.items.Add(foundItem);
-                MyInventory(avatarInfos);
-            }
-            else
-            {
-                Console.WriteLine("There is nothing in your bag.");
-            }
-        }
+        }     
     }
 }
