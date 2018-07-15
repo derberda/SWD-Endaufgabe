@@ -32,7 +32,7 @@ namespace swd_projekt
             Enemy.EnemyRandomLocation(enemyInfos);
 
             RoomInteraction.RoomCheck(avatarInfos, enemyInfos);
-            Win.checkWin(location, avatarInfos);
+            WinCondition.CheckWin(location, avatarInfos);
 
             return playerLocation;
         }
