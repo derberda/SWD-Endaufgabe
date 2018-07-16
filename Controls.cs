@@ -9,8 +9,8 @@ namespace swd_projekt
         public static Location CurrentRoom = Location.MapSetUp();
         public static Array SplitInput()
         {
-            string _input = Console.ReadLine();
-            Words = _input.Split(' ');
+            string input = Console.ReadLine();
+            Words = input.Split(' ');
 
             return Words;
         }
