@@ -24,14 +24,7 @@ namespace swd_projekt
             {
                 double randomRoomNumber = Rnd.NextDouble();
                 randomRoomNumber = ((randomRoomNumber * (3.0 - 2.0)) + 2.0);
-                if (randomRoomNumber > 1.49)
-                {
-                    Math.Ceiling(randomRoomNumber);
-                }
-                else
-                {
-                    Math.Floor(randomRoomNumber);
-                }
+               
                 int NewrandomRoomNumber = Convert.ToInt32(randomRoomNumber);
                 Enemy.RandomLocation = NewrandomRoomNumber;
             }
