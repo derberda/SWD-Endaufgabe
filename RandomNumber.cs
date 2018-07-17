@@ -18,9 +18,9 @@ namespace swd_projekt
 
             return attackEnemy;
         }
-        public static void EnemyRandomLocation(Enemy enemy)
+        public static void EnemyRandomLocation(Enemy enemyInfos)
         {
-            if (enemy.Dead == false)
+            if (enemyInfos.Dead == false)
             {
                 double randomRoomNumber = Rnd.NextDouble();
                 randomRoomNumber = ((randomRoomNumber * (3.0 - 2.0)) + 2.0);
